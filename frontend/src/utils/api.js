@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://videocall-y6nu.onrender.com';
+const API_BASE_URL = 'https://vcxtv1pq-5000.inc1.devtunnels.ms';
 
 const api = axios.create({
   baseURL: API_BASE_URL,

@@ -33,7 +33,7 @@ const roomSchema = new mongoose.Schema({
   },
   maxParticipants: {
     type: Number,
-    default: 2
+    default: 5
   }
 }, {
   timestamps: true

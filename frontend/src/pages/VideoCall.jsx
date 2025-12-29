@@ -28,11 +28,11 @@ const VideoCall = () => {
     cleanup
   } = useWebRTC(roomId, user?.id);
 
-  useEffect(() => {
-    return () => {
-      cleanup();
-    };
-  }, [cleanup]);
+  // useEffect(() => {
+  //   return () => {
+  //     cleanup();
+  //   };
+  // }, [cleanup]);
 
   // Show loading if user is not available
   if (!user?.id) {

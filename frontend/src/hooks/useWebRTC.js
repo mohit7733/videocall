@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { io } from 'socket.io-client';
 
-const SOCKET_URL = 'https://videocall-y6nu.onrender.com';
+const SOCKET_URL = 'https://vcxtv1pq-5000.inc1.devtunnels.ms';
 
 export const useWebRTC = (roomId, userId) => {
   const [localStream, setLocalStream] = useState(null);
