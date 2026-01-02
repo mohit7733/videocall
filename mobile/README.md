@@ -67,66 +67,79 @@ export const RTC_CONFIGURATION = {
 
 ## Running the App
 
-### iOS
+### Prerequisites
 
-```bash
-# Start Metro bundler
-npm start
+#### iOS (Mac only)
+- Xcode 14+ installed
+- CocoaPods installed: `sudo gem install cocoapods`
+- iOS Simulator or physical device
 
-# In a new terminal, run iOS
-npm run ios
+#### Android
+- Android Studio installed
+- Android SDK configured
+- Android emulator or physical device
 
-# Or use Expo CLI
-npx expo start --ios
-```
+### iOS Setup
 
-### Android
+1. **Install CocoaPods dependencies:**
+   ```bash
+   cd ios
+   pod install
+   cd ..
+   ```
 
-```bash
-# Start Metro bundler
-npm start
+2. **Run the app:**
+   ```bash
+   # Start Metro bundler
+   npm start
 
-# In a new terminal, run Android
-npm run android
+   # In a new terminal, run iOS
+   npm run ios
+   ```
 
-# Or use Expo CLI
-npx expo start --android
-```
+   Or open in Xcode:
+   ```bash
+   open ios/VideoCallMobile.xcworkspace
+   ```
 
-### Web (for testing)
+### Android Setup
 
-```bash
-npm run web
-```
+1. **Make sure Android emulator is running or device is connected:**
+   ```bash
+   adb devices
+   ```
+
+2. **Run the app:**
+   ```bash
+   # Start Metro bundler
+   npm start
+
+   # In a new terminal, run Android
+   npm run android
+   ```
 
 ## Permissions Setup
 
 ### iOS
 
-The app automatically requests camera and microphone permissions. The permissions are configured in `app.json`:
+The app automatically requests camera and microphone permissions. The permissions are configured in `ios/VideoCallMobile/Info.plist`:
 
-```json
-"ios": {
-  "infoPlist": {
-    "NSCameraUsageDescription": "This app needs access to your camera for video calls.",
-    "NSMicrophoneUsageDescription": "This app needs access to your microphone for video calls."
-  }
-}
+```xml
+<key>NSCameraUsageDescription</key>
+<string>This app needs access to your camera for video calls.</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>This app needs access to your microphone for video calls.</string>
 ```
 
 ### Android
 
-Android permissions are configured in `app.json`:
+Android permissions are configured in `android/app/src/main/AndroidManifest.xml`:
 
-```json
-"android": {
-  "permissions": [
-    "android.permission.CAMERA",
-    "android.permission.RECORD_AUDIO",
-    "android.permission.MODIFY_AUDIO_SETTINGS",
-    "android.permission.INTERNET"
-  ]
-}
+```xml
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+<uses-permission android:name="android.permission.INTERNET" />
 ```
 
 The app will automatically request these permissions when needed.

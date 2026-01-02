@@ -48,12 +48,13 @@ fastlane/test_output
 # CocoaPods
 /ios/Pods/
 
-# Expo
-.expo/
-dist/
-web-build/
+# Metro
+.metro-health-check*
 
 # Environment
 .env
 .env.local
 
+# Temporary files
+*.tmp
+*.temp

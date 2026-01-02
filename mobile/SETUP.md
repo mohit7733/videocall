@@ -52,9 +52,13 @@ export const RTC_CONFIGURATION = {
 
 ### Step 3: iOS Setup
 
-#### 3.1 Install CocoaPods (if using bare React Native)
+#### 3.1 Install CocoaPods
 
 ```bash
+# Install CocoaPods if not already installed
+sudo gem install cocoapods
+
+# Install iOS dependencies
 cd ios
 pod install
 cd ..
@@ -72,16 +76,29 @@ npm run ios
 
 **Note:** iOS simulator may have limited camera/microphone support. Test on a physical device for full functionality.
 
+**Alternative:** Open in Xcode:
+```bash
+open ios/VideoCallMobile.xcworkspace
+```
+Then run from Xcode.
+
 ### Step 4: Android Setup
 
 #### 4.1 Check Android Configuration
 
-Ensure `android/build.gradle` has:
-- `minSdkVersion 21` or higher
-- Proper dependencies
+The project is pre-configured with:
+- `minSdkVersion 21`
+- All required dependencies
+- Permissions in AndroidManifest.xml
 
 #### 4.2 Run on Android
 
+**Make sure Android emulator is running or device is connected:**
+```bash
+adb devices
+```
+
+**Run the app:**
 ```bash
 # Start Metro bundler
 npm start

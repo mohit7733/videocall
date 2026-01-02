@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-## 🚀 Get Started in 3 Steps
+## 🚀 Get Started in 4 Steps
 
 ### 1. Install Dependencies
 ```bash
@@ -8,14 +8,25 @@ cd mobile
 npm install
 ```
 
-### 2. Update Backend URL
+### 2. iOS Setup (Mac only)
+```bash
+cd ios
+pod install
+cd ..
+```
+
+### 3. Update Backend URL
 Edit `mobile/services/webrtcService.js` line 10:
 ```javascript
 export const SOCKET_URL = 'YOUR_BACKEND_URL_HERE';
 ```
 
-### 3. Run the App
+### 4. Run the App
 ```bash
+# Start Metro bundler
+npm start
+
+# In another terminal:
 # iOS
 npm run ios
 
